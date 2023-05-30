@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lettere Casuali</title>
+  <script>
+    // Funzione per generare una lettera casuale
+    function generaLetteraCasuale() {
+      var lettere = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var indiceCasuale = Math.floor(Math.random() * lettere.length);
+      return lettere.charAt(indiceCasuale);
+    }
+
+    // Funzione per aggiornare le lettere ogni secondo
+    function aggiornaLettere() {
+      var element = document.getElementById("lettere");
+      var letteraCasuale = generaLetteraCasuale();
+      element.innerHTML = letteraCasuale;
+      setTimeout(aggiornaLettere, 1000); // Aggiorna ogni secondo
+    }
+  </script>
+</head>
+<body onload="aggiornaLettere()">
+  <h1>Lettere Casuali</h1>
+  <p>Lettera corrente: <span id="lettere"></span></p>
+</body>
+</html>
